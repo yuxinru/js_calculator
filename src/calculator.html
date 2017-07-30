@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visible Calculator </title>
+    <script src="calculator.js"></script>
+    <script language="JavaScript" type="text/javascript"></script>
+</head>
+<body>
+<p>-----点击下方按钮来输入表达式-----</p>
+
+<button onclick = "key0()">0</button>
+<button onclick = "key1()">1</button>
+<button onclick = "key2()">2</button>
+<button onclick = "key3()">3</button>
+<button onclick = "key4()">4</button>
+<button onclick = "key5()">5</button>
+<button onclick = "key6()">6</button>
+<button onclick = "key7()">7</button>
+<button onclick = "key8()">8</button>
+<button onclick = "key9()">9</button>
+<button onclick = "operator1()">+</button>
+<button onclick = "operator2()">-</button>
+<button onclick = "operator3()">*</button>
+<button onclick = "operator4()">/</button>
+<button onclick = "operator5()">!</button>
+<button onclick = "operator6()">.</button>
+<button onclick = "operator7()">=</button>
+<button onclick = "restart()">Restart</button>
+
+<p id = "demo">
+    请输入表达式：
+</p>
+
+<p id = "demos">
+    计算结果：
+</p>
+<script>
+    function change_input(){
+        var x = document.getElementById("demo");
+        x.innerHTML = "请输入表达式："+ input;
+    }
+</script>
+<script>
+    function change_output(){
+        var x = document.getElementById("demos");
+        x.innerHTML = "计算结果：" + output;
+    }
+</script>
+<script>
+    var input = "";
+    var output = "";
+    var source = new calculate_result();
+</script>
+<script>
+    function key0(){
+        input+="0";
+        change_input();
+    }
+</script>
+<script>
+    function key1(){
+        input+='1';
+        change_input();
+    }
+</script>
+<script>
+    function key2(){
+        input+='2';
+        change_input();
+    }
+</script>
+<script>
+    function key3(){
+        input+='3';
+        change_input();
+    }
+</script>
+<script>
+    function key4(){
+        input+='4';
+        change_input();
+    }
+</script>
+<script>
+    function key5(){
+        input+='5';
+        change_input();
+    }
+</script>
+<script>
+    function key6(){
+        input+='6';
+        change_input();
+    }
+</script>
+<script>
+    function key7(){
+        input+='7';
+        change_input();
+    }
+</script>
+<script>
+    function key8(){
+        input+='8';
+        change_input();
+    }
+</script>
+<script>
+    function key9(){
+        input+='9';
+        change_input();
+    }
+</script>
+<script>
+    function operator1(){                  //represent '+';
+        input+='+';
+        change_input();
+    }
+</script>
+<script>
+    function operator2(){                //represent '-';
+        input+='-';
+        change_input();
+    }
+</script>
+<script>
+    function operator3(){                //represent '*';
+        input+='*';
+        change_input();
+    }
+</script>
+<script>
+    function operator4(){                //represent '/';
+        input+='/';
+        change_input();
+    }
+</script>
+<script>
+    function operator5(){                //represent '!';
+        input+='!';
+        change_input();
+    }
+</script>
+<script>
+    function operator6(){                //represent '.';
+        input+='.';
+        change_input();
+    }
+</script>
+<script>
+    function operator7(){                //represent '=';
+        source.prepare(input);
+        var tem_result = source.Calculate();
+        output += String(tem_result);
+        change_output();
+        source.last();
+    }
+</script>
+<script>
+    function restart(){                //calculate next expression;
+        input = "";
+        change_input();
+        output = "";
+        change_output();
+        source.clear();
+    }
+</script>
+</body>
+</html>
